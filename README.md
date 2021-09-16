@@ -66,6 +66,7 @@ Commands to send to Carista ELM327 to prepare it for data sniffing:
 
 ## Warnings ##
 * Cheap ELM327 adapters will not work. Buffer will overflow with date before you can read the data from it.
+* For some reasons, when trying to use MCP2515 to sniff, experiencing communication problems between OBDeleven and the car. Tried both with and without EOL termination resistor with no luck.
 
 ## Shopping list ##
 * OBDeleven adapter
