@@ -36,11 +36,33 @@ Commands to send to Carista ELM327 to prepare it for data sniffing:
 * At the same time use OBDeleven to connect with car, go to list of modules, select  module, select live data, select data type, view.
 * Carista ELM327 will sniff the communication between OBDeleven and car.
 
-### Example data sniffed from OBDeleven-Car communication ###
-
 ## Request headers and modules ##
 * `714` - instryment cluster (module 0x17)
 * `7E1` - gearbox (module 0x02)
+
+## Example data sniffed from OBDeleven-Car communication ##
+### RPM from instrument cluster ###
+`714 8 03 22 22 D1 55 55 55 55` - request<br>
+`77E 8 05 62 22 D1 1F 98 AA AA` - reply (0x1F98 = 8088 DEC; 8808 / 4 = 2022RPM)<br>
+
+### Phototransistor instrument cluster (ambient light sensor) ###
+`714 8 03 22 22 4D 55 55 55 55` - request<br>
+`77E 8 04 62 22 4D FA AA AA AA` - reply (0xFA = 250 DEC; 250 out of 0-255 range; higher=brighter)<br>
+
+### Enagaged gear from DSG ###
+`7E1 8 03 22 38 16 55 55 55 55` - request<br>
+`7E9 8 04 62 38 16 00 AA AA AA` - gear not engaged<br>
+`7E9 8 04 62 38 16 0C AA AA AA` - reverse<br>
+`7E9 8 04 62 38 16 02 AA AA AA` - 1st<br>
+
+### Gearbox mode from DSG ###
+`7E1 8 03 22 38 15 55 55 55 55` - request<br>
+`7E9 8 04 62 38 15 00 AA AA AA` - P<br>
+`7E9 8 04 62 38 15 01 AA AA AA` - R<br>
+`7E9 8 04 62 38 15 02 AA AA AA` - N<br>
+`7E9 8 04 62 38 15 03 AA AA AA` - D<br>
+`7E9 8 04 62 38 15 04 AA AA AA` - S<br>
+`7E9 8 04 62 38 15 05 AA AA AA` - M<br>
 
 ## Warnings ##
 * Cheap ELM327 adapters will not work. Buffer will overflow with date before you can read the data from it.
