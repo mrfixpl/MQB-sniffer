@@ -39,6 +39,7 @@ Commands to send to Carista ELM327 to prepare it for data sniffing:
 ## Request headers and modules ##
 * `714` - instryment cluster (module 0x17)
 * `7E1` - gearbox (module 0x02)
+* More to check: https://github.com/commaai/openpilot/issues/1238#issuecomment-602155568
 
 ## Example data sniffed from OBDeleven-Car communication ##
 ### RPM from instrument cluster ###
