@@ -42,6 +42,20 @@ Commands to send to Carista ELM327 to prepare it for data sniffing:
 * More to check: https://github.com/commaai/openpilot/issues/1238#issuecomment-602155568
 
 ## Example data sniffed from OBDeleven-Car communication ##
+### Starting and maintaining communication with instrument cluster ###
+`714 8 02 10 03 55 55 55 55 55` - Accessing instrument cluster<br>
+`77E 8 06 50 03 00 32 00 C8 AA` - Cluster reply<br>
+<br>
+`714 8 03 19 02 AE 55 55 55 55`<br>
+`77E 8 03 59 02 19 AA AA AA AA`<br>
+<br>
+`714 8 02 3E 00 55 55 55 55 55` - I'm here, don't sleep<br>
+`77E 8 02 7E 00 AA AA AA AA AA` - not sleeping!<br>
+<br>
+`714 8 02 3E 00 55 55 55 55 55`<br>
+`77E 8 02 7E 00 AA AA AA AA AA`<br>
+`...`<br>
+
 ### RPM from instrument cluster ###
 `714 8 03 22 22 D1 55 55 55 55` - request<br>
 `77E 8 05 62 22 D1 1F 98 AA AA` - reply (0x1F98 = 8088 DEC; 8808 / 4 = 2022RPM)<br>
