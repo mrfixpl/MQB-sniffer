@@ -36,6 +36,22 @@ Commands to send to Carista ELM327 to prepare it for data sniffing:
 * At the same time use OBDeleven to connect with car, go to list of modules, select  module, select live data, select data type, view.
 * Carista ELM327 will sniff the communication between OBDeleven and car.
 
+## Injecting ##
+### ELM327 config ###
+* `at z` - reset ELM327 chip
+* `at sp 6` - set CAN-BUS to 11bit, 500kbps
+* `at al` - enable long messages
+* `at caf0` - disable formating
+* `at v1` - enable frames shorter than 8 bytes (no padding)
+* `at bi` - bypass the initiation step
+
+### Sending frame ###
+* `at sh 777` - set frame header to 777
+* `11 22 33 44 55` - send 0x11 0x22 0x33 0x44 0x55<br />
+This will send this frame:<br />
+`Standard ID: 0x777 DLC: 5  Data: 0x11 0x22 0x33 0x44 0x55`
+
+
 ## Request headers and modules ##
 * `714` - instrument cluster (module 0x17)
 * `7E1` - gearbox (module 0x02)
