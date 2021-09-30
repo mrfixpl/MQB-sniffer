@@ -22,7 +22,7 @@ Currently this is more a work log for future reference.
 Commands to send to Carista ELM327 to prepare it for data sniffing:
 * `at z` - reset ELM327 chip
 * `at d` - defaults
-* `at sp 6` - set CAN-BUS to 11bit, 500kbps
+* `at sp 6` - set CAN-BUS to 11bit, 500kbps (Golf MK7 is using ISO 15765-4 CAN, 11 bit ID, 500 kbaud standard)
 * `at cfc1` - flowcontrol
 * `at d1` - show DLC
 * `at al` - enable long messages
