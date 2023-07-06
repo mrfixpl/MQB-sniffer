@@ -100,7 +100,7 @@ This will send this frame:<br />
 * For some reasons, when trying to use MCP2515 to sniff, experiencing communication problems between OBDeleven and the car. Tried both with and without EOL termination resistor with no luck.
 
 ## Shopping list ##
-* OBDeleven adapter - https://obdeleven.com/?src=link&ref=Zy245Iacqc6bMTHh
+* OBDeleven adapter - http://mr-fix.info/redirect/obdeleven
 * Carista adapter
 * Arduino Nano
 * MCP2515
